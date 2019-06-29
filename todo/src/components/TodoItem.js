@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import { toggleComplete } from '../Actions/Actions';
+import { toggleComplete } from '../actions';
 import { connect } from 'react-redux';
 
- class TodoItem extends Component {
+  class TodoItem extends Component {
 
-   toggleComplete(event) {
+    toggleComplete(event) {
     this.props.toggleComplete(this.props.index);
   }
 
-   render() {
+    render() {
     return (
       <li>
         <input
@@ -21,4 +21,4 @@ import { connect } from 'react-redux';
   }
 }
 
- export default connect(null, { toggleComplete })(TodoItem);
+  export default connect(null, { toggleComplete })(TodoItem); 

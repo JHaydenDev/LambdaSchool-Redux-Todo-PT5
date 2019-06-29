@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux';
-import { addTodo } from './Actions/Actions';
+import { addTodo } from './actions';
 import TodoList from './Components/TodoList';
 
-class App extends Component {
+ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,7 +14,7 @@ class App extends Component {
     this.updateNewTodo = this.updateNewTodo.bind(this);
   }
 
-  addTodo(event) {
+   addTodo(event) {
     event.preventDefault();
     this.props.addTodo({
       value: this.state.newTodo,
@@ -25,13 +25,13 @@ class App extends Component {
     });
   }
 
-  updateNewTodo(event) {
+   updateNewTodo(event) {
     this.setState({
       newTodo: event.target.value
     });
   }
 
-  render() {
+   render() {
     return (
       <div className="App">
       <h1>Joe's stuff he has been procrastinating.</h1>
@@ -48,9 +48,9 @@ class App extends Component {
     );
   }
 }
-const mapStateToProps = (state) => {
+ const mapStateToProps = (state) => {
   return {
     todos: state.todos
   };
 };
-export default connect(mapStateToProps, { addTodo })(App);
+ export default connect(mapStateToProps, { addTodo })(App); 
