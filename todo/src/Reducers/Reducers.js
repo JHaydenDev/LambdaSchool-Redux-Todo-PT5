@@ -1,7 +1,7 @@
 import {
     NEW_TODO,
     TOGGLE_COMPLETE
-   } from '../actions';
+   } from '../Actions/Actions';
   
   export default (todos = [], action) => {
     switch (action.type) {
